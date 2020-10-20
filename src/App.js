@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import quotes from './components/quotes';
+import Quotes from './components/quotes';
 
 const sampleSimpson = {
   quote : "Shut up, brain. I got friends now. I don't need you anymore.",
@@ -21,14 +21,15 @@ class App extends React.Component {
       .then(response => response.data)
       .then(data => {
         this.setState({
-          simpsons: data.results[0],
+          simpsons: data[0],
         });
     });
   }
   render(){
     return (
       <div className="App">
-        <Quotes />
+        <button onClick={(e) => this.getSimpsons(e)} type='button'>Change the quote</button>
+        <Quotes simpsons={this.state.simpsons}/>
       </div>
     );
   }

@@ -5,7 +5,7 @@ function quotes ({simpsons}){
         <div>
             <h3>{simpsons.quote}</h3>
             <h4>{simpsons.character}</h4>
-            <img src="{simpsons.image}" alt="{simpsons.character}"></img>
+            <img src={simpsons.image} alt={simpsons.character}></img>
         </div>
     )
 }
